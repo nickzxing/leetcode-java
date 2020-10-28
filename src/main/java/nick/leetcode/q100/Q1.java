@@ -19,13 +19,13 @@ import java.util.Map;
 public class Q1 {
 
     public static int[] twoSum(int[] nums, int target) {
-        Map<Integer, Integer> map = new HashMap<>(nums.length);
+        Map<Integer, Integer> recordMap = new HashMap<>(nums.length);
         for (int i = 0; i < nums.length; i++) {
             int result = target - nums[i];
-            if (map.containsKey(result)) {
-                return new int[]{map.get(result), i};
+            if (recordMap.containsKey(result)) {
+                return new int[]{recordMap.get(result), i};
             }
-            map.put(nums[i], i);
+            recordMap.put(nums[i], i);
         }
         return null;
     }
